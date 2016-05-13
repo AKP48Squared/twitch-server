@@ -1,12 +1,9 @@
 'use strict';
-const ServerConnectorPlugin = require('../../lib/ServerConnectorPlugin');
 const irc = require('tmi.js');
 
-class Twitch extends ServerConnectorPlugin {
-  constructor(config, id, AKP48, persistentObjects) {
-    super('Twitch', AKP48);
-    this._id = id;
-    this._config = config;
+class Twitch extends global.AKP48.pluginTypes.ServerConnector {
+  constructor(AKP48, config, id, persistentObjects) {
+    super('Twitch', AKP48, config, id);
     this._defaultCommandDelimiters = ['!', '.'];
     var self = this;
     if(!config || !config.channels) {
