@@ -155,3 +155,4 @@ Twitch.prototype.getPersistentObjects = function () {
 };
 
 module.exports = Twitch;
+module.exports.type = 'ServerConnector';
